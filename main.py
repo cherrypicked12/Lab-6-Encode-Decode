@@ -12,6 +12,7 @@ def encode(password):
 
 # Tanushree Hadavale
 
+# Tanushree
 def decode(encoded_pass):
     decoded_pass = []
     for num in encoded_pass:
@@ -27,3 +28,22 @@ def decode(encoded_pass):
     decoded_pass = ''.join(decoded_pass)       # Changes the decoded_pass list into a string
     return decoded_pass
 
+def main():
+    while True:
+        print("Menu")
+        print("-------------")
+        print("1. Encode\n2. Decode\n3. Quit")
+        user_input = int(input("Please enter an option: "))
+        if user_input == 1:
+            password = str(input("Please enter your password to encode: "))
+            encode_pass = encode(password)
+            print("Your password has been encoded and stored!")
+        elif user_input == 2:
+            decode_pass = decode(encode_pass)
+            print(f"The encoded password is {encode_pass}, and the original password is {decode_pass}.")
+        elif user_input == 3:
+            break
+
+
+if __name__ == "__main__":
+    main()
